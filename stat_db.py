@@ -117,15 +117,6 @@ def get_all_from_stat_db(table_name, param='', order=None, field='*'):
 
     return response, column_names
 
-def make_report(table_name, date1, date2):
-    param=f"WHERE DATE(time_of_public) BETWEEN '{date1}' AND '{date2}'"
-    response = get_all_from_stat_db(param=param, table_name=table_name)
-
-    return response
-
-
-# print(make_report('main_stats', '2023-01-02', '2023-01-04'))
-
 def make_report_excel(table_name, date1, date2):
     """выводит отчет в excell. Даты вводить в формате: '2023-01-02'"""
 
